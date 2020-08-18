@@ -1,9 +1,7 @@
 import React from 'react';
-import {View, Image, ImageBackground} from 'react-native';
-
-import backIcon from '../../assets/images/icons/back.png';
-
+import {View} from 'react-native';
 import styles from './styles';
+import { FontAwesome } from '@expo/vector-icons'; 
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -19,7 +17,9 @@ import { useNavigation } from '@react-navigation/native';
       <View style={styles.container}>
         <View style={styles.topBar}>
           <BorderlessButton onPress={handleGoBack}>
-            <Image source={backIcon} resizeMode="center" style={{tintColor:'#f8734b'}}/>
+            <View style={styles.topBarIcon}>
+              <FontAwesome name="angle-left" size={40} color="#f8734b" />
+            </View>
           </BorderlessButton>
         </View>
   

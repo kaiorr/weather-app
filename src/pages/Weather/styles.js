@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     width: 350,
     height: 230,
-    backgroundColor: '#8F8F8F',
+    backgroundColor: '#6d6d6d',
     
   },
   infoText: {
@@ -78,6 +78,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Archivo_700Bold',
     color: '#fcfcfc',
     fontSize: 20,
+  },
+  loadingArea: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

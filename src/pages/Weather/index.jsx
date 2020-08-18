@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View } from 'react-native';
+import {Text, View, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import PageHeader from '../../components/PageHeader';
 import * as Location from 'expo-location';
@@ -19,9 +19,11 @@ const Weather = () => {
   const [wind, setWind] = useState('7')
   const [currentDate, setCurrentDate] = useState('00:00')
   const [humidity, setHumidity] = useState('58')
+  const [loading, setLoading] = useState(true)
 
 
     async function getLocation(){
+      setLoading(true)
       let { status } = await Location.requestPermissionsAsync()
         if (status !== 'granted') {
           setErrorMsg('Permission to access location was denied')
@@ -31,20 +33,17 @@ const Weather = () => {
         }
     }
   
+
+ 
     async function setCurrentWeather(){
       await getLocation()
-
 
         const date = new Date()
 
         setCurrentDate(date.getHours() + ':' + date.getMinutes())
 
-        
-
-
       const data = await getCurrentWeather(locationCoords)
 
-  
       setCurrentTemperature(convertKelvinToC(data[0]))
       setTemperatureMin(convertKelvinToC(data[1]))
       setTemperatureMax(convertKelvinToC(data[2]))
@@ -57,7 +56,8 @@ const Weather = () => {
     function convertKelvinToC(kelvin){
       return parseInt(kelvin - 273)
     }
-  
+
+
     useEffect(() => {
       setCurrentWeather()
     }, [])
@@ -69,27 +69,29 @@ const Weather = () => {
           <PageHeader />
 
           <View style={styles.content}>
-            <Feather style={{marginTop: 30}} name="sun" size={70} color="#f8734b" />
 
-            <View style={styles.temperatureView}>
-              <Text style={styles.temperatureText}>{currentTemperature}</Text>
-              <Text style={[styles.temperatureText, {fontSize: 20}]}>°C</Text>
-            </View>
+                <Feather style={{marginTop: 30}} name="sun" size={70} color="#f8734b" />
 
-            <Text style={styles.localizationText}>{locationName}, {currentDate}</Text>
+                <View style={styles.temperatureView}>
+                  <Text style={styles.temperatureText}>{currentTemperature}</Text>
+                  <Text style={[styles.temperatureText, {fontSize: 20}]}>°C</Text>
+                </View>
 
-            <View style={styles.info}>
-              <View style={styles.addtionalInfo}>
-                <Card title={'Vento'} variable={wind} ></Card>
-                <Card title={'Umidade'} variable={humidity} ></Card>
-                <Card title={'Temp. Min'} variable={temperatureMin} ></Card>
-                <Card title={'Temp. Max'} variable={temperatureMax} ></Card>
-              </View>
-            </View>
+                <Text style={styles.localizationText}>{locationName}, {currentDate}</Text>
+
+                <View style={styles.info}>
+                  <View style={styles.addtionalInfo}>
+                    <Card title={'Vento'} variable={wind} ></Card>
+                    <Card title={'Umidade'} variable={humidity} ></Card>
+                    <Card title={'Temp. Min'} variable={temperatureMin} ></Card>
+                    <Card title={'Temp. Max'} variable={temperatureMax} ></Card>
+                  </View>
+                </View>                
+
 
             <View style={styles.buttonsContainer} >
               <RectButton style={[styles.button, styles.buttonPrimary]} onPress={() => setCurrentWeather()}>
-                <Text style={styles.buttonText}>Buscar Previsão</Text>
+                <Text style={styles.buttonText}>Atualizar Previsão</Text>
               </RectButton>
             </View>
 

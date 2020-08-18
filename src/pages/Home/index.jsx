@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import {View, Image, Text, ImageBackground} from 'react-native';
+import {View, Text, ImageBackground} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'; 
 import bg from '../../assets/images/bg.png';
 import {useNavigation} from '@react-navigation/native';

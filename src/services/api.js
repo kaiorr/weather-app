@@ -17,6 +17,7 @@ const getCurrentWeather = async (locationCoords) => {
             const wind = data.wind.speed
             const humidity = data.main.humidity
             const currentTemperature = data.main.temp
+
             
             results = [currentTemperature, temperatureMin, temperatureMax, locationName, wind, humidity]
             
