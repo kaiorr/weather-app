@@ -21,22 +21,6 @@ const Home = () => {
         <FontAwesome name="sun-o" size={80} color="orange" />
       </View>
 
-      <View style={styles.homeCloudRigth}>
-        <Ionicons name="ios-cloudy-night" size={80} color="white" /> 
-      </View>
-
-      <View style={styles.homeCloudLeft}>
-        <Ionicons name="ios-cloudy-night" size={80} color="white" /> 
-      </View>
-
-      <View style={styles.homeCloudRigth}>
-        <Feather name="cloud-drizzle" size={75} color="white" /> 
-      </View>
-
-      <View style={styles.homeCloudLeft}>
-        <Feather name="cloud-lightning" size={75} color="white" />
-      </View>
-
       <Text style={styles.title}>
           Seja bem-vindo(a), ao Weatherapp {'\n'}
           <Text style={styles.titleBold}>O clima na palma da sua mão</Text>

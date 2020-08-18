@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#232634',
+    backgroundColor: '#333',
     justifyContent: 'center',
   },
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
 
   buttonPrimary: {
-    backgroundColor: '#8F8F8F',
+    backgroundColor: '#orange',
   },
 
   buttonText: {
