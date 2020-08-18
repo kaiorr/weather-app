@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import {View, Image, Text, ImageBackground} from 'react-native';
-import { FontAwesome, Ionicons, Feather } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 import bg from '../../assets/images/bg.png';
 import {useNavigation} from '@react-navigation/native';
 import {RectButton} from 'react-native-gesture-handler';
@@ -18,7 +18,7 @@ const Home = () => {
       <ImageBackground resizeMode="contain" source={bg} style={styles.content} >
 
       <View style={styles.homeSun}>
-        <FontAwesome name="sun-o" size={80} color="orange" />
+        <FontAwesome name="sun-o" size={120} color="#f8734b" />
       </View>
 
       <Text style={styles.title}>
