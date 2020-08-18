@@ -69,7 +69,7 @@ const Weather = () => {
           <PageHeader />
 
           <View style={styles.content}>
-            <Feather style={{marginTop: 30}} name="sun" size={60} color="orange" />
+            <Feather style={{marginTop: 30}} name="sun" size={70} color="#f8734b" />
 
             <View style={styles.temperatureView}>
               <Text style={styles.temperatureText}>{currentTemperature}</Text>
